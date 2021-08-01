@@ -26,17 +26,17 @@ class HomeController extends Controller
     public function index()
     {
         $users = user::all();
-        return view('index',['users' => $users]);
+        return view('index', ['users' => $users]);
     }
-    public function destroy($id): \Illuminate\Http\RedirectResponse
+
+    public function destroy($id)
     {
-        $users=User::find($id);
-        if($users!=null){
+        $users = User::find($id);
+        if ($users != null) {
             $users->delete();
-            return redirect('users')->with('Success','User is deleted');
-        }
-        else{
-            return redirect('$users')->with('Fail','User is not found!');
+            return redirect('users')->with('Success', 'User is deleted');
+        } else {
+            return redirect('$users')->with('Fail', 'User is not found!');
         }
     }
 }

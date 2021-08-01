@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 Route::get('/administrator',[\App\Http\Controllers\HomeController::class,"index"]);
-Route::get('/delete',[\App\Http\Controllers\HomeController::class,"destroy"])->name('users.delete');
+Route::delete('/delete/{user}',[\App\Http\Controllers\HomeController::class,"destroy"])->name('users.delete');
 Auth::routes();
 
 Auth::routes();
