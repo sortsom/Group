@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -20,11 +21,22 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return Renderable
      */
     public function index()
     {
         $users = user::all();
         return view('index',['users' => $users]);
+    }
+    public function destroy($id): \Illuminate\Http\RedirectResponse
+    {
+        $users=User::find($id);
+        if($users!=null){
+            $users->delete();
+            return redirect('users')->with('Success','User is deleted');
+        }
+        else{
+            return redirect('$users')->with('Fail','User is not found!');
+        }
     }
 }
