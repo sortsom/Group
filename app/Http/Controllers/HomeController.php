@@ -31,12 +31,8 @@ class HomeController extends Controller
 
     public function destroy($id)
     {
-        $users = User::find($id);
-        if ($users != null) {
-            $users->delete();
-            return redirect('users')->with('Success', 'User is deleted');
-        } else {
-            return redirect('$users')->with('Fail', 'User is not found!');
-        }
+        $users = User::findOrFail($id);
+        $users->delete();
+        return redirect('/administrator')->with('Success', 'User is deleted');
     }
 }
