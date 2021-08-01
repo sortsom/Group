@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,13 +24,17 @@ class HomeController extends Controller
      *
      * @return Renderable
      */
-    public function index()
+    public function index(): Renderable
     {
         $users = user::all();
         return view('index', ['users' => $users]);
     }
+<<<<<<< Updated upstream
 
     public function destroy($id)
+=======
+    public function destroy($id): RedirectResponse
+>>>>>>> Stashed changes
     {
         $users = User::findOrFail($id);
         $users->delete();
