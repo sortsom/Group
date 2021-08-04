@@ -29,12 +29,8 @@ class HomeController extends Controller
         $users = user::all();
         return view('index', ['users' => $users]);
     }
-<<<<<<< Updated upstream
 
     public function destroy($id)
-=======
-    public function destroy($id): RedirectResponse
->>>>>>> Stashed changes
     {
         $users = User::findOrFail($id);
         $users->delete();
