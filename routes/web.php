@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 Route::get('/administrator',[\App\Http\Controllers\HomeController::class,"index"]);
 Route::delete('/delete/{user}',[\App\Http\Controllers\HomeController::class,"destroy"])->name('users.delete');
+Route::put('/update/{user}',[\App\Http\Controllers\HomeController::class,"update"])->name('users.update');
 Auth::routes();
 
 Auth::routes();
