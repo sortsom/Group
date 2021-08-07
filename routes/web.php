@@ -21,6 +21,4 @@ Route::delete('/delete/{user}',[\App\Http\Controllers\HomeController::class,"des
 Route::put('/update/{user}',[\App\Http\Controllers\HomeController::class,"update"])->name('users.update');
 Auth::routes();
 
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

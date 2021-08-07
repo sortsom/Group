@@ -24,10 +24,14 @@ class HomeController extends Controller
      *
      * @return Renderable
      */
-    public function index(): Renderable
+    public function index()
     {
         $users = user::all();
         return view('index', ['users' => $users]);
+    }
+
+    public function update(Request $request,$id){
+        return $id;
     }
 
     public function destroy($id): RedirectResponse
