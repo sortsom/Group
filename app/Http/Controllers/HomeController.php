@@ -36,9 +36,8 @@ class HomeController extends Controller
     public function update(Request $request,$id){
         $user = User::findOrFail($id);
        $user->update([
-           $user->name=>$request->name,
-           $user->email=>$request->email,
-
+           'name'=>$request->name,
+           'email'=>$request->email,
        ]);
         return redirect('/administrator');
 
