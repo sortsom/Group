@@ -29,9 +29,7 @@ class HomeController extends Controller
         $users = user::all();
         return view('index', ['users' => $users]);
     }
-    public function edit($id){
 
-    }
 
     public function update(Request $request,$id){
         $user = User::findOrFail($id);
@@ -53,7 +51,7 @@ class HomeController extends Controller
     public function  edit($id)
     {
     }
-    public function  update( Request $request, $id){
+    public function update( Request $request, $id){
         $user=User::findOrFail($id);
         $user->update([
             name=>$request->name,
