@@ -29,9 +29,19 @@ class HomeController extends Controller
         $users = user::all();
         return view('index', ['users' => $users]);
     }
+    public function edit($id){
+
+    }
 
     public function update(Request $request,$id){
-        return $id;
+        $user = User::findOrFail($id);
+       $user->update([
+           $user->name=>$request->name,
+           $user->email=>$request->email,
+
+       ]);
+        return redirect('/administrator');
+
     }
 
     public function destroy($id): RedirectResponse

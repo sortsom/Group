@@ -55,7 +55,6 @@
                                     </div>
                                     <form action="{{route('users.update',$user->id)}}" method="POST">
                                         <div class="modal-body">
-
                                             @csrf
                                             @method('PUT')
                                             <div class="form-group row">
@@ -178,7 +177,6 @@
                         <div class="form-group row">
                             <label for="password"
                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
                             <div class="col-md-6">
                                 <input id="password" type="password"
                                        class="form-control @error('password') is-invalid @enderror" name="password"
@@ -214,9 +212,9 @@
                                             </div>
                                         </div>
                                     </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
+                           </form>
+                        </div>
+                        <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-success">Save update</button>
                 </div>
