@@ -131,8 +131,6 @@
             </tbody>
         </table>
     </div>
-    <<<<<<< Updated upstream
-    =======
     <!-- Modal -->
 
     <!--    editmodel-->
@@ -225,7 +223,6 @@
             </div>
         </div>
     </div>
-    >>>>>>> Stashed changes
 
 
 
