@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth.login');
 });
-Route::get('/administrator',[\App\Http\Controllers\HomeController::class,"index"]);
-Route::delete('/delete/{user}',[\App\Http\Controllers\HomeController::class,"destroy"])->name('users.delete');
-Route::put('/update/{user}',[\App\Http\Controllers\HomeController::class,"update"])->name('users.update');
+Route::get('/administrator',[HomeController::class,"index"]);
+Route::delete('/delete/{user}',[HomeController::class,"destroy"])->name('users.delete');
+Route::put('/update/{user}',[HomeController::class,"update"])->name('users.update');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
