@@ -47,14 +47,6 @@ class HomeController extends Controller
         $users->delete();
         return redirect('/administrator')->with('Success', 'User is deleted');
     }
-    public function  edit($id)
-    {
-    }
-    public function update( Request $request, $id){
-        $user=User::findOrFail($id);
-        $user->update([
-            'name'=>$request->name,
-            'email'=>$request->email,
-        ]);
-    }
+
+
 }
